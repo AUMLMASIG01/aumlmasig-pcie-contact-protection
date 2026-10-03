@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14233a">
+<title>AUMLMASIG｜PCIe 金手指出貨保護方案｜企業導入</title>
+<meta name="description" content="AUMLMASIG PCIe 金手指出貨保護方案，適用 NIC、HBA、RAID、NVMe、USB、SATA、工業 I/O 等 PCIe 擴充卡。提供標準接點保護與實卡客製試樣，試樣費用可折抵正式訂單。">
+<meta property="og:title" content="AUMLMASIG｜PCIe 金手指出貨保護方案">
+<meta property="og:description" content="把 PCIe 金手指的裸露交付，變成可管理的出貨保護流程。">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --navy:#14233a;--ink:#17202b;--muted:#687488;--line:#dfe5ec;--soft:#f5f7fa;
+  --accent:#d91c1c;--accent2:#b81414;--ok:#177a52;--warn:#9a5b00;
+  --radius:18px;--shadow:0 12px 34px rgba(22,36,55,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;line-height:1.68}
+a{color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 28px}
+.topbar{background:#0d1829;color:#d9e2ed;font-size:13px}
+.topbar .wrap{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar a{color:#fff;text-decoration:none;font-weight:800}
+.hero{background:radial-gradient(circle at 84% 22%,rgba(255,255,255,.13),transparent 25%),linear-gradient(135deg,#203756 0%,#14233a 62%,#0e1929 100%);color:#fff;padding:70px 0 62px}
+.brand{font-weight:900;letter-spacing:.22em;font-size:18px}
+.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:52px;align-items:center;margin-top:20px}
+.eyebrow{color:var(--accent);font-size:14px;font-weight:900;letter-spacing:.1em}
+.hero .eyebrow{color:#ffb6b6}
+h1{font-size:clamp(36px,5vw,64px);line-height:1.1;letter-spacing:-.03em;margin:10px 0 20px}
+.hero-copy{font-size:19px;color:#e4ebf3;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;border:1px solid transparent;text-decoration:none;font-weight:900;cursor:pointer;transition:.2s ease;font:inherit;font-weight:900}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent2)}
+.btn.primary:disabled{opacity:.6;cursor:wait}
+.btn.ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.06)}
+.hero-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}
+.hero-point{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:14px;padding:13px 14px;font-weight:800;text-align:center;font-size:14px}
+.hero-art{min-height:340px;border-radius:24px;background:linear-gradient(155deg,#f8fafc,#dce4ed);position:relative;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pcb{position:absolute;left:8%;right:7%;top:18%;height:54%;border-radius:18px 18px 6px 6px;background:#263b38}
+.gold{position:absolute;left:9%;right:7%;top:71%;height:38px;background:repeating-linear-gradient(90deg,#d2a735 0 8px,#f0d269 8px 11px,#252525 11px 14px)}
+.film{position:absolute;left:29%;right:4%;top:61%;height:80px;background:linear-gradient(180deg,rgba(236,249,255,.84),rgba(183,225,245,.64));border:1px solid #fff}
+.tab{position:absolute;right:2.8%;top:61%;width:68px;height:30px;background:#e8f7ff;border:1px solid #b5dce9;border-radius:0 12px 12px 0;transform:translateY(24px)}
+.art-note{position:absolute;left:5%;bottom:6%;color:#526274;font-size:12px;font-weight:800}
+.section{padding:64px 0}
+.section.soft{background:var(--soft)}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:8px 0 14px;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--muted);max-width:880px;margin:0 0 30px}
+.value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+.value{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.value strong{display:block;color:var(--navy);font-size:20px;margin-bottom:7px}
+.value p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;padding:26px}
+.card.featured{border:2px solid #8ebfd8}
+.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:var(--navy);color:#fff;font-weight:900;font-size:12px;align-self:flex-start}
+.card.featured .badge{background:var(--accent)}
+.card h3{font-size:24px;margin:12px 0 6px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:12px}
+.card ul{padding-left:19px;margin:0 0 20px;color:#394657}
+.card li{margin:6px 0}
+.offer{margin-top:auto;border-top:1px solid var(--line);padding-top:17px}
+.offer-title{font-weight:900;color:var(--navy)}
+.offer-note{font-size:13px;color:var(--muted);margin:4px 0 14px}
+.card .btn{width:100%;background:var(--navy);color:#fff}
+.sample{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px}
+.sample div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.sample strong{display:block;color:var(--navy);font-size:18px;margin-bottom:6px}
+.sample p{margin:0;color:var(--muted)}
+.use-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.use{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px}
+.use h3{margin:0 0 8px;font-size:19px}
+.use p{margin:0;color:var(--muted)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.compare-box{border-radius:18px;padding:25px;border:1px solid var(--line);background:#fff}
+.compare-box h3{margin:0 0 10px;font-size:22px}
+.compare-box p{margin:0;color:var(--muted)}
+.compare-box.primary{border:2px solid #9bc9df;background:#f5fbff}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:26px}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.step strong{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}
+.step span{font-size:14px;color:var(--muted)}
+.notice{margin-top:30px;border-left:5px solid #c58a16;background:#fff9e9;padding:16px 18px;border-radius:10px;color:#574518}
+.inquiry{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:start}
+.inquiry-copy{background:linear-gradient(145deg,var(--navy),#172a45);color:#fff;padding:30px;border-radius:20px}
+.inquiry-copy h2{margin-top:0}
+.inquiry-copy p{color:#dce5ef}
+.inquiry-copy .micro{font-size:13px;opacity:.88}
+.contact-links a{display:inline-block;margin-top:14px;color:#fff;font-weight:900;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:10px}
+form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:900;color:#3b4a5b}
+input,select,textarea{width:100%;border:1px solid #cfd7e2;border-radius:10px;padding:12px 13px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:100px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;background:#f5fbff;border:1px solid #cfe5f0;border-radius:12px;padding:12px 14px}
+.check input{width:auto;margin-top:5px}
+.check label{font-weight:700;font-size:14px;color:#24364d}
+.hp{position:absolute;left:-9999px}
+.form-note{font-size:12px;color:var(--muted);margin-top:10px}
+.status{margin-top:12px;font-size:14px;font-weight:800;min-height:20px}
+.status.ok{color:var(--ok)}
+.status.warn{color:var(--warn)}
+.fallback{display:none;margin-top:12px;padding:14px;border:1px dashed #c9a24a;border-radius:12px;background:#fffaf0;font-size:14px}
+.fallback textarea{min-height:140px;font-size:13px;margin-top:8px}
+.fallback .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.fallback .btn{min-height:40px;font-size:14px;background:var(--navy);color:#fff}
+footer{background:#0d1829;color:#cbd4df;padding:32px 0;font-size:13px}
+footer strong{color:#fff}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
+.footer-grid a{color:#fff;font-weight:900;text-decoration:none}
+@media(max-width:1050px){
+  .hero-grid,.inquiry{grid-template-columns:1fr}
+  .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .wrap{padding:0 16px}
+  .hero{padding:48px 0}
+  .grid,.compare,.fields,.hero-points,.flow,.use-grid,.value-grid,.sample,.footer-grid{grid-template-columns:1fr}
+  .section{padding:48px 0}
+  .hero-art{min-height:260px}
+  .topbar .wrap{justify-content:center}
+  .topbar span{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>AUMLMASIG｜協碩科技聯合有限公司｜企業解決方案</span>
+    <a href="mailto:contact@aumlmasig.com">contact@aumlmasig.com</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">AUMLMASIG</div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">PCIe 介面卡接點出貨保護</div>
+        <h1>把 PCIe 金手指的裸露交付，<br>變成可管理的出貨保護流程。</h1>
+        <p class="hero-copy">
+          針對 NIC、HBA、RAID、NVMe、USB、SATA、工業 I/O 等 PCIe 擴充卡，
+          在完成測試後、第一次安裝前，為金手指加上一層可撕除的接點保護。
+          適合中小量、多 SKU 出貨，不必從找材料、打樣與模切規格重新開始。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#b2b-inquiry">申請試樣（可折抵訂單）</a>
+          <a class="btn ghost" href="#solutions">查看方案</a>
+        </div>
+        <div class="hero-points">
+          <div class="hero-point">PCIe x1 / x4 / x8 / x16</div>
+          <div class="hero-point">中小量・多 SKU</div>
+          <div class="hero-point">試樣費可折抵訂單</div>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt" aria-label="PCIe 金手指接點保護概念示意">
+        <div class="pcb"></div>
+        <div class="gold"></div>
+        <div class="film"></div>
+        <div class="tab"></div>
+        <div class="art-note">概念示意圖｜實際外觀依樣品確認</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">為什麼需要</div>
+    <h2>讓接點保護成為產品交付流程的一部分</h2>
+    <p class="lead">
+      PCIe Card 完成功能測試後，金手指在包裝、倉儲、搬運與運輸階段持續裸露。
+      本方案在第一次安裝前增加一層可撕除的接點表面覆蓋，並讓尺寸、版本與後續補貨可以被管理。
+    </p>
+    <div class="value-grid">
+      <div class="value"><strong>降低重複開發</strong><p>不必每個 Card 型號都重新找材料、問膠系、打樣、畫尺寸與找模切供應商。</p></div>
+      <div class="value"><strong>支援多種 PCIe 規格</strong><p>從 x1、x4、x8 到 x16，可依標準尺寸或實際 PCB 幾何評估。</p></div>
+      <div class="value"><strong>建立可重複補貨規格</strong><p>樣品確認後建立專屬規格與補貨識別，降低後續採購與版本管理負擔。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="solutions">
+  <div class="wrap">
+    <div class="eyebrow">企業方案</div>
+    <h2>兩種導入方式，從一個 Card 型號開始</h2>
+    <p class="lead">實際規格、MOQ、價格與交期，依需求確認後提供正式報價。</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="badge">方案 A｜標準尺寸</span>
+        <h3>標準接點保護方案</h3>
+        <div class="sub">適合先用 PCIe x1 / x4 / x8 / x16 標準規格驗證使用流程</div>
+        <ul>
+          <li>適用 NIC、HBA、RAID、NVMe、USB、SATA 等 PCIe Card</li>
+          <li>完成測試後貼附，安裝前撕除</li>
+          <li>可評估加入「安裝前撕除」提醒文字</li>
+          <li>導入門檻最低，適合中小量試用</li>
+        </ul>
+        <div class="offer">
+          <div class="offer-title">適合：想先驗證流程的企業</div>
+          <div class="offer-note">提供 PCIe 規格與預估用量即可</div>
+          <a href="#b2b-inquiry" class="btn solution-btn" data-solution="標準接點保護方案">申請標準試樣</a>
+        </div>
+      </article>
+
+      <article class="card featured">
+        <span class="badge">方案 B｜實卡客製</span>
+        <h3>實卡客製驗證方案</h3>
+        <div class="sub">依實際 PCB／Card 幾何規劃覆蓋範圍，樣品確認後建立專屬補貨規格</div>
+        <ul>
+          <li>依 Card 實際尺寸與結構評估</li>
+          <li>可評估 Pull Tab、覆蓋區域、特殊 PCB 外形</li>
+          <li>可評估加入企業 Logo／品牌文字</li>
+          <li>適合多 SKU、特殊外形與高價 PCIe Card</li>
+        </ul>
+        <div class="offer">
+          <div class="offer-title">推薦：準備導入產品線的企業</div>
+          <div class="offer-note">提供 Card 型號、照片或尺寸即可開始評估</div>
+          <a href="#b2b-inquiry" class="btn solution-btn" data-solution="實卡客製驗證方案">提交 Card 需求</a>
+        </div>
+      </article>
+    </div>
+
+    <h2 style="margin-top:52px">付費試樣，全額折抵正式訂單</h2>
+    <p class="lead">為了讓樣品依您的實際 Card 製作，試樣採小額收費；正式下單時，試樣費用全額折抵。</p>
+    <div class="sample">
+      <div><strong>1. 確認需求</strong><p>依您提供的 Card 資料，回覆試樣內容與試樣費用。</p></div>
+      <div><strong>2. 製作試樣</strong><p>確認並付款後製作樣品，交期於報價時說明。</p></div>
+      <div><strong>3. 折抵訂單</strong><p>試樣通過後正式下單，試樣費用全額折抵首張訂單。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">適用情境</div>
+    <h2>特別適合這些出貨情境</h2>
+    <p class="lead">單卡價值高、SKU 多、單型號量不一定大，但仍希望把出貨流程做一致的企業。</p>
+    <div class="use-grid">
+      <div class="use"><h3>自有品牌 PCIe Card</h3><p>NIC、HBA、RAID、NVMe、Capture、USB、SATA、工業 I/O 等產品出貨。</p></div>
+      <div class="use"><h3>多 SKU・中小量出貨</h3><p>不希望每個型號都自行重新開發一套材料與模切規格。</p></div>
+      <div class="use"><h3>維修／RMA 返還</h3><p>產品完成檢測或維修後，再次進入包裝與客戶交付流程。</p></div>
+      <div class="use"><h3>專案備品與系統整合</h3><p>企業專案、備品、測試卡或低週轉 PCIe Card 的出貨與管理。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">導入價值</div>
+    <h2>企業不是做不到，而是不一定值得從零開始做。</h2>
+    <div class="compare">
+      <div class="compare-box"><h3>自行建立</h3><p>找材料 → 取得樣品 → 比較膠系 → 畫尺寸 → 找模切 → 管 MOQ → 驗樣 → 建料號 → 補貨 → 管版本。</p></div>
+      <div class="compare-box primary"><h3>AUMLMASIG 協助導入</h3><p>提供 Card 資料 → 確認試樣 → 樣品驗證 → 建立專屬規格 → 依既定規格補貨。</p></div>
+    </div>
+    <div class="flow">
+      <div class="step"><strong>01 提供 Card</strong><span>型號、PCIe 規格、照片或尺寸資料。</span></div>
+      <div class="step"><strong>02 需求評估</strong><span>確認標準或實卡客製，回覆試樣內容與費用。</span></div>
+      <div class="step"><strong>03 樣品確認</strong><span>付費試樣，依實際 Card 驗證使用方式。</span></div>
+      <div class="step"><strong>04 規格建立</strong><span>確認尺寸、版本、包裝位置與補貨識別。</span></div>
+      <div class="step"><strong>05 持續補貨</strong><span>依確認規格詢價與供貨，試樣費折抵首單。</span></div>
+    </div>
+    <div class="notice">
+      <strong>企業合作開發說明：</strong>
+      本方案目前開放企業試樣與導入需求評估，尚未提供現貨。實際材料、尺寸、功能、MOQ、價格、交期與可提供項目，
+      依個別 Card、樣品驗證結果及正式報價確認；本頁不構成特定性能保證或交貨承諾。
+    </div>
+  </div>
+</section>
+
+<section class="section" id="b2b-inquiry">
+  <div class="wrap inquiry">
+    <div class="inquiry-copy">
+      <div class="eyebrow" style="color:#ffb6b6">企業需求評估</div>
+      <h2>先從一個 Card 型號開始。</h2>
+      <p>提供一個型號與預估需求量，我們會在 3 個工作天內回覆適合的方案、試樣內容與試樣費用。</p>
+      <p class="micro">提交資料僅作為需求評估，不代表正式訂單，也不會產生任何費用。試樣費用、正式規格、付款、交期與供貨條件，將於報價時另行確認。</p>
+      <div class="contact-links"><a href="mailto:contact@aumlmasig.com">Email：contact@aumlmasig.com</a></div>
+    </div>
+
+    <form id="leadForm" novalidate>
+      <div class="fields">
+        <div class="field"><label for="company">公司名稱 *</label><input id="company" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="contact">聯絡人 *</label><input id="contact" name="contact" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="phone">電話</label><input id="phone" name="phone" autocomplete="tel"></div>
+        <div class="field">
+          <label for="solution">希望評估的方案 *</label>
+          <select id="solution" name="solution" required>
+            <option value="">請選擇</option>
+            <option>標準接點保護方案</option>
+            <option>實卡客製驗證方案</option>
+            <option>尚未確定，請協助建議</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pcie">PCIe 類型</label>
+          <select id="pcie" name="pcie">
+            <option value="">未確定</option><option>PCIe x1</option><option>PCIe x4</option><option>PCIe x8</option><option>PCIe x16</option><option>其他／特殊 PCB</option>
+          </select>
+        </div>
+        <div class="field"><label for="model">Card 型號／產品類型</label><input id="model" name="model" placeholder="例如：10GbE NIC、HBA、RAID、NVMe Card"></div>
+        <div class="field">
+          <label for="qty">預估每月出貨量</label>
+          <select id="qty" name="qty">
+            <option value="">未確定</option><option>20–50 PCS</option><option>51–100 PCS</option><option>101–500 PCS</option><option>501–1,000 PCS</option><option>1,001–3,000 PCS</option><option>3,000+ PCS</option>
+          </select>
+        </div>
+        <div class="field full"><label for="current">目前金手指／接點如何保護？</label><input id="current" name="current" placeholder="例如：裸露、防靜電袋、塑膠保護套、其他"></div>
+        <div class="field full"><label for="pain">過去是否發生過金手指刮傷、污損、氧化或客訴？</label>
+          <select id="pain" name="pain">
+            <option value="">請選擇</option><option>有，曾造成退貨或客訴</option><option>有，但影響不大</option><option>沒有發生過，屬預防性需求</option><option>不清楚</option>
+          </select>
+        </div>
+        <div class="field full"><label for="notes">需求／備註</label><textarea id="notes" name="notes" placeholder="可補充品牌 Logo、安裝提醒、PCB 特殊幾何、包裝流程、預計導入產品線等需求。"></textarea></div>
+        <div class="field full check">
+          <input id="paidSample" name="paidSample" type="checkbox" value="願意">
+          <label for="paidSample">若試樣內容符合需求，我們願意支付試樣費用（正式下單時全額折抵）。勾選不代表下單，費用將於報價時確認。</label>
+        </div>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+
+      <button class="btn primary" id="submitBtn" style="width:100%;margin-top:16px" type="submit">送出企業需求</button>
+      <div class="form-note">我們僅將您提供的資料用於本次需求評估與後續聯繫，不會提供給第三方。</div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <div class="fallback" id="fallback">
+        <strong>線上送出暫時無法使用，請改用以下任一方式（內容已幫您整理好）：</strong>
+        <textarea id="fallbackText" readonly></textarea>
+        <div class="row">
+          <button type="button" class="btn" id="copyBtn">複製內容</button>
+          <a class="btn" id="mailBtn" href="mailto:contact@aumlmasig.com">用 Email 軟體寄出</a>
+        </div>
+        <div style="margin-top:8px;color:#687488">也可以直接複製內容，寄到 contact@aumlmasig.com。</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <strong>AUMLMASIG｜協碩科技聯合有限公司</strong><br>
+      PCIe 金手指出貨保護方案｜企業導入
+      <br><span>實際產品規格、材料、功能、MOQ、價格與交期，以正式確認資料為準。</span>
+    </div>
+    <a href="mailto:contact@aumlmasig.com">contact@aumlmasig.com</a>
+  </div>
+</footer>
+
+<script>
+/* ===== 上線設定（只需改這兩行）=====
+   FORM_ENDPOINT：表單收件網址。到 formspree.io 免費註冊、建立表單後，貼上類似
+                  "https://formspree.io/f/xxxxxxx" 的網址。留空時自動改用 Email 備援流程。
+   HERO_PHOTO   ：實拍照片檔名（例如 "hero.jpg"，放在本頁同一資料夾）。留空則顯示概念示意圖。 */
+const FORM_ENDPOINT = "";
+const HERO_PHOTO = "";
+
+(function(){
+  const $ = id => document.getElementById(id);
+  const form = $('leadForm'), status = $('status'), btn = $('submitBtn');
+  const fallback = $('fallback'), fbText = $('fallbackText');
+  const SUBJECT = 'PCIe 金手指出貨保護方案｜企業需求評估';
+
+  function track(event, params){
+    try{
+      if (typeof window.gtag === 'function') window.gtag('event', event, params || {});
+      if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({event:event}, params || {}));
+    }catch(e){}
+  }
+
+  if (HERO_PHOTO){
+    const img = new Image();
+    img.alt = 'PCIe Card 金手指貼附保護膜實拍';
+    img.onload = () => $('heroArt').appendChild(img);
+    img.src = HERO_PHOTO;
+  }
+
+  document.querySelectorAll('.solution-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      $('solution').value = b.dataset.solution || '';
+      track('b2b_solution_click', {solution: b.dataset.solution || ''});
+      setTimeout(() => $('company').focus(), 450);
+    });
+  });
+
+  let started = false;
+  form.addEventListener('input', () => { if(!started){ started = true; track('b2b_form_start'); } });
+
+  function buildText(d){
+    return [
+      'AUMLMASIG｜PCIe 金手指出貨保護方案｜企業需求', '',
+      '公司名稱：' + d.company, '聯絡人：' + d.contact, 'Email：' + d.email, '電話：' + d.phone,
+      '希望評估方案：' + d.solution, 'PCIe 類型：' + d.pcie, 'Card 型號／產品類型：' + d.model,
+      '預估每月出貨量：' + d.qty, '目前保護方式：' + d.current, '過去是否發生問題：' + d.pain,
+      '願意支付試樣費用：' + (d.paidSample ? '是' : '未勾選'), '需求／備註：' + d.notes
+    ].join('\n');
+  }
+
+  function showFallback(text){
+    fbText.value = text;
+    $('mailBtn').href = 'mailto:contact@aumlmasig.com?subject=' + encodeURIComponent(SUBJECT) + '&body=' + encodeURIComponent(text);
+    fallback.style.display = 'block';
+  }
+
+  $('copyBtn').addEventListener('click', async () => {
+    try{ await navigator.clipboard.writeText(fbText.value); }
+    catch(e){ fbText.select(); document.execCommand('copy'); }
+    status.className = 'status ok'; status.textContent = '已複製，請貼到 Email 寄至 contact@aumlmasig.com。';
+    track('b2b_fallback_copy');
+  });
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    if (form._gotcha.value) return;
+
+    const fd = new FormData(form);
+    const d = {};
+    ['company','contact','email','phone','solution','pcie','model','qty','current','pain','notes'].forEach(k => d[k] = (fd.get(k) || '').toString().trim());
+    d.paidSample = !!fd.get('paidSample');
+    const text = buildText(d);
+
+    track('b2b_inquiry_submit', {solution: d.solution, quantity_range: d.qty, paid_sample: d.paidSample ? 'yes' : 'no'});
+
+    if (!FORM_ENDPOINT){
+      status.className = 'status warn';
+      status.textContent = '請用下方方式完成寄送。';
+      showFallback(text);
+      return;
+    }
+
+    btn.disabled = true; status.className = 'status'; status.textContent = '送出中…';
+    try{
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {'Accept':'application/json','Content-Type':'application/json'},
+        body: JSON.stringify(Object.assign({_subject: SUBJECT, 摘要: text}, d, {paidSample: d.paidSample ? '是' : '否'}))
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      form.reset();
+      status.className = 'status ok';
+      status.textContent = '已收到您的需求，我們會在 3 個工作天內以 Email 回覆。';
+      track('b2b_inquiry_success', {paid_sample: d.paidSample ? 'yes' : 'no'});
+    }catch(err){
+      status.className = 'status warn';
+      status.textContent = '線上送出失敗，請改用下方方式寄送。';
+      showFallback(text);
+      track('b2b_inquiry_error');
+    }finally{
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
